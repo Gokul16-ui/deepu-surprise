@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb6d5,
+            #ff75aa,
+            #ff4f91
+        );
+}
+
+
+/* SCREEN */
+
+.screen {
+    position: absolute;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 15px;
+
+    overflow-y: auto;
+}
+
+
+/* HIDE */
+
+.hidden {
+    display: none;
+}
+
+
+/* GLASS BOX */
+
+.welcome-box,
+.surprise-box {
+    width: 100%;
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px
+        rgba(100, 0, 50, 0.30);
+}
+
+
+/* WELCOME */
+
+.welcome-box {
+
+    min-height: 540px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* BIG HEART */
+
+.heart-big {
+
+    font-size: 70px;
+
+    animation:
+        heartbeat 1.4s infinite;
+
+}
+
+
+/* SMALL TEXT */
+
+.small-text {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin: 15px 0;
+
+}
+
+
+/* HEADINGS */
+
+h1 {
+
+    font-size: 48px;
+
+    margin: 10px 0;
+
+    text-shadow:
+        0 5px 20px
+        rgba(100,0,50,0.25);
+
+}
+
+
+.from {
+
+    font-size: 20px;
+
+    margin: 15px 0 30px;
+
+}
+
+
+/* BUTTON */
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #e52c70;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(100,0,50,0.25);
+
+    transition: 0.3s;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.06);
+
+}
+
+
+/* PHOTO */
+
+/* PHOTO - FIXED SIZE */
+.photo-container {
+    width: 330px;
+    height: 330px;
+
+    margin: 0 auto 20px;
+
+    padding: 7px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: white;
+
+    box-shadow:
+        0 10px 30px rgba(100, 0, 50, 0.30);
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center 25%;
+
+    border-radius: 50%;
+}
+
+/* NAME */
+
+.name {
+
+    font-size: 42px;
+
+    margin: 10px 0;
+
+}
+
+
+.dob {
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* MESSAGE */
+
+.message {
+
+    margin: 20px auto;
+
+    max-width: 320px;
+
+    line-height: 1.6;
+
+    font-size: 15px;
+
+}
+
+
+.surprise-box h2 {
+
+    font-size: 21px;
+
+    margin: 15px;
+
+}
+
+
+/* MUSIC */
+
+.music-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 15px;
+
+}
+
+
+/* REPLAY */
+
+.replay {
+
+    font-size: 13px;
+
+    padding: 10px 20px;
+
+}
+
+
+/* HEART CONTAINER */
+
+#hearts {
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+/* HEART */
+
+.heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    color: white;
+
+    font-size: 20px;
+
+    animation:
+        flyHeart linear forwards;
+
+}
+
+
+/* FLYING HEART ANIMATION */
+
+@keyframes flyHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* HEARTBEAT */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-height:700px) {
+
+    .photo-container {
+
+        width: 210px;
+
+        height: 210px;
+
+    }
+
+    h1 {
+
+        font-size: 38px;
+
+    }
+
+}
